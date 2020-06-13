@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/cities"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="113dp"
+        app:layout_constraintBottom_toTopOf="@+id/myview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="81dp"
+        android:layout_height="20dp"
+        android:layout_gravity="right"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Hello"
+        app:layout_constraintBottom_toTopOf="@+id/myview"
+        app:layout_constraintEnd_toStartOf="@+id/buttonright"
+        app:layout_constraintStart_toEndOf="@+id/buttonleft"
+        app:layout_constraintTop_toBottomOf="@+id/addDate" />
+
+    <Button
+        android:id="@+id/readQRcode"
+        android:layout_width="77dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="clickQRCode"
+        android:text="QR \n code"
+        app:layout_constraintBottom_toTopOf="@+id/myview"
+        app:layout_constraintEnd_toStartOf="@+id/buttonleft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cities" />
+
+    <Button
+        android:id="@+id/buttonleft"
+        android:layout_width="83dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="1dp"
+        android:onClick="LeftClick"
+        android:text="(--"
+        app:layout_constraintBottom_toTopOf="@+id/myview"
+        app:layout_constraintEnd_toStartOf="@+id/textView1"
+        app:layout_constraintStart_toEndOf="@+id/readQRcode"
+        app:layout_constraintTop_toBottomOf="@+id/addSubject" />
+
+    <Button
+        android:id="@+id/buttonright"
+        android:layout_width="81dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="1dp"
+        android:onClick="RightClick"
+        android:text="--)"
+        app:layout_constraintBottom_toTopOf="@+id/myview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView1"
+        app:layout_constraintTop_toBottomOf="@+id/addStudent" />
+
+    <Button
+        android:id="@+id/addSubject"
+        android:layout_width="83dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="2dp"
+        android:text="Sub"
+        android:onClick="subjectClick"
+        app:layout_constraintBottom_toTopOf="@+id/buttonleft"
+        app:layout_constraintEnd_toStartOf="@+id/addDate"
+        app:layout_constraintStart_toEndOf="@+id/readQRcode"
+        app:layout_constraintTop_toBottomOf="@+id/cities" />
+
+    <Button
+        android:id="@+id/addDate"
+        android:layout_width="83dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="16dp"
+        android:text="Date"
+        android:onClick="dateClick"
+        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        app:layout_constraintEnd_toStartOf="@+id/addStudent"
+        app:layout_constraintStart_toEndOf="@+id/addSubject"
+        app:layout_constraintTop_toBottomOf="@+id/cities" />
+
+    <Button
+        android:id="@+id/addStudent"
+        android:layout_width="83dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="2dp"
+        android:text="Stud"
+        android:onClick="studentClick"
+        app:layout_constraintBottom_toTopOf="@+id/buttonright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addDate"
+        app:layout_constraintTop_toBottomOf="@+id/cities" />
+
+    <ScrollView
+        android:id="@+id/myview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cities">
+        tools:layout_editor_absoluteX="1000dp"
+        tools:layout_editor_absoluteY="0dp"
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right" />
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="100dp"
+                tools:layout_editor_absoluteY="0dp"></TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
